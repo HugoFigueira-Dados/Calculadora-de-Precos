@@ -3,7 +3,7 @@
 
 ---
 
-**Visão Geral da Arquitetura e Recursos**
+  **Visão Geral da Arquitetura e Recursos**
 
 * **Entrada Manual & Gestão de Custos:**
   
@@ -11,7 +11,7 @@
 
 * Cálculo automático do custo unitário, total de impostos, faturamento e margem financeira/percentual.
 
-* **Integração com a Base Interna de SKUs:**
+   **Integração com a Base Interna de SKUs:**
 
 * Suporte ao carregamento da base de dados via upload local (CSV/Excel) ou link público do Google Drive.
 
@@ -19,11 +19,11 @@
 
 * Cálculo do valor de carreto unitário e total por meio da regra: $\text{Carreto} = \text{Valor Unitário} \times \text{Fator Hecto}$.
 
-* **Tratamento de Dados de Produto:**
+   **Tratamento de Dados de Produto:**
   
 * Função de limpeza e simplificação de nomes (`simplificar_nome_produto`), que remove siglas operacionais e de paletização (ex.: `SH`, `NPAL`, `VIDRO`, `PET`) para padronizar exibições e facilitar identificações.
 
-* **Comparativo de Mercado & Projeções Estatísticas:**
+   **Comparativo de Mercado & Projeções Estatísticas:**
 
 * Acompanhamento e cálculo da diferença percentual em relação ao preço do concorrente praticado na praça: $\left(\frac{\text{Preço Venda}}{\text{Preço Concorrência}} - 1\right) \times 100$.
 
