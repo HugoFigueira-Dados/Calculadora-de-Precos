@@ -3,7 +3,7 @@
 
 ---
 
-  **Visão Geral da Arquitetura e Recursos**
+**Visão Geral da Arquitetura e Recursos**
   
   **Entrada Manual & Gestão de Custos:**
   
