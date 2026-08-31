@@ -1,34 +1,108 @@
-# Calculadora-de-Preços
-  O repositório **Calculadora de preços** é uma aplicação web interativa desenvolvida em Python com o framework Streamlit. Seu objetivo principal é apoiar a precificação estratégica de produtos, integrando a gestão de custos operacionais (com foco em frete/carreto) a análises comparativas de preços de concorrência e projeções estatísticas de mercado.
+# 🧮 Calculadora de Preços & Comparador de Concorrência
+
+Esta é uma aplicação interativa desenvolvida em **Python** e **Streamlit** criada para automatizar a precificação de produtos (SKUs), calcular a margem de lucro real sobre os custos operacionais (impostos e carreto) e projetar a competitividade mercadológica frente aos preços praticados na praça.
+
+O projeto foi estruturado para ser dinâmico e flexível, permitindo que a base de SKUs seja atualizada por upload local ou link do Google Drive, sem dependências de sistemas ou códigos de marcas específicas.
 
 ---
 
-**Visão Geral da Arquitetura e Recursos**
-  
-  **Entrada Manual & Gestão de Custos:**
-  
-* Painel para inclusão manual de dados de compra: código EAN do produto, quantidade de caixas, valor da nota fiscal de compra, alíquota de impostos e preço de venda sugerido.
+## 🚀 Funcionalidades Principais
 
-* Cálculo automático do custo unitário, total de impostos, faturamento e margem financeira/percentual.
+* **Busca Automática de SKUs:** Ao inserir o código do produto (SKU), a aplicação busca na base cadastrada os dados de **EAN/DUN**, **Nome do Produto** e o **Fator Hectolitro**.
 
-   **Integração com a Base Interna de SKUs:**
 
-* Suporte ao carregamento da base de dados via upload local (CSV/Excel) ou link público do Google Drive.
+* **Preenchimento Flexível:** Se a base não estiver carregada, os campos de EAN, Descrição e Fator Hectolitro podem ser informados e ajustados manualmente.
 
-* Preenchimento e cruzamento automático de campos a partir do código: recuperação de código EAN, descrição completa do produto e o *Fator Hecto*.
 
-* Cálculo do valor de carreto unitário e total por meio da regra: $\text{Carreto} = \text{Valor Unitário} \times \text{Fator Hecto}$.
+* **Tratamento Inteligente de Nomes:** Limpeza automática do nome do produto (removendo siglas operacionais como `CX`, `PAL`, `SH`) para isolar as palavras-chave principais e otimizar a visualização.
 
-   **Tratamento de Dados de Produto:**
-  
-* Função de limpeza e simplificação de nomes (`simplificar_nome_produto`), que remove siglas operacionais e de paletização (ex.: `SH`, `NPAL`, `VIDRO`, `PET`) para padronizar exibições e facilitar identificações.
 
-   **Comparativo de Mercado & Projeções Estatísticas:**
+* **Cálculos Automáticos de Precificação:**
+* Custo unitário de compra
 
-* Acompanhamento e cálculo da diferença percentual em relação ao preço do concorrente praticado na praça: $\left(\frac{\text{Preço Venda}}{\text{Preço Concorrência}} - 1\right) \times 100$.
 
-* Módulo de simulação de **Elasticidade-Preço Cruzada da Demanda**, estimando o impacto no volume de vendas em resposta a alterações na tabela da concorrência.
+* Impostos unitários e totais
 
-* Módulo de **Otimização do Preço Ótimo** para balanceamento entre margem em R$ e volume de vendas.
 
-* **Matriz de Posicionamento Mercadológico**, que classifica automaticamente o SKU em categorias (Agressivo/Âncora, Equilibrado ou Margem/Premium) de acordo com a variação frente à concorrência.
+* Custo de carreto ($Carreto = Valor\ Uni \times Fator\ Hectolitro$)
+
+
+* Custo total acumulado da operação
+
+
+* Faturamento bruto esperado
+
+
+* Margem líquida em $R\$$ e em $\%$ sobre o custo total
+
+
+
+
+* **Comparação com a Concorrência:** Análise em tempo real do diferencial do seu preço em relação ao valor praticado pelo mercado.
+
+
+* **Projeções Estatísticas & Otimização:**
+* **Elasticidade-Preço Cruzada:** Simulação de ganho/perda de volume de vendas conforme flutuações de preços da concorrência.
+
+
+* **Otimização de Lucro:** Sugestão de preço focal para maximizar a margem em $R\$$.
+
+
+* **Matriz de Posicionamento:** Enquadramento estratégico do produto nas categorias *Agressivo/Âncora*, *Equilibrado* ou *Margem/Premium*.
+
+
+
+
+
+---
+
+## 🛠️ Tecnologias Utilizadas
+
+* **Python 3.x**
+* **Streamlit** (Interface gráfica e dashboards interativos)
+
+
+* **Pandas** (Processamento de dados e leitura de arquivos CSV/Excel)
+
+
+* **Regular Expressions (`re`)** (Tratamento de texto e normalização de descrições)
+
+
+
+---
+
+## 📋 Estrutura Esperada para a Base de SKUs (CSV / Excel)
+
+Para que a busca automática funcione, o arquivo carregado (CSV ou Excel) pode conter as seguintes colunas (o sistema identifica automaticamente maiúsculas e minúsculas):
+
+| Informação | Nomes Aceitos na Coluna |
+| --- | --- |
+| **Código do Produto** | `Código`, `Codigo`, `COD`, `SKU` |
+| **Nome do Produto** | `Descrição`, `Descricao`, `Nome`, `Produto` |
+| **Código EAN/DUN** | `EAN`, `DUN`, `Código de Barras` |
+| **Fator Hectolitro** | `Fator Hecto`, `Fator`, `FHL` |
+
+---
+
+## 🔧 Como Executar o Projeto Localmente
+
+1. **Clone o repositório:**
+```bash
+git clone https://github.com/seu-usuario/seu-repositorio.git
+cd seu-repositorio
+
+```
+
+
+2. **Instale as dependências:**
+```bash
+pip install streamlit pandas openpyxl
+
+```
+
+
+3. **Execute a aplicação:**
+```bash
+streamlit run app.py
+
+```
