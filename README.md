@@ -4,6 +4,8 @@ Esta é uma aplicação interativa desenvolvida em **Python** e **Streamlit** cr
 
 O projeto foi estruturado para ser dinâmico e flexível, permitindo que a base de SKUs seja atualizada por upload local ou link do Google Drive, sem dependências de sistemas ou códigos de marcas específicas.
 
+Link para acessar o WebAPP: https://calculadora-de-precos.streamlit.app/
+
 ---
 
 ## 🚀 Funcionalidades Principais
