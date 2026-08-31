@@ -233,7 +233,7 @@ with aba1:
             delta_color="inverse"
         )
     else:
-        st.info("Preencha os campos de **Preço Venda (R$)** e **PREÇO CONCORRÊNCIA (Manual R$)** para calcular a variação.")
+        st.info("Preencha os campos de **Preço Venda** e **PREÇO CONCORRÊNCIA** para calcular a variação.")
 
     # ==========================================
     # GUIA INFORMATIVO DA APLICAÇÃO
