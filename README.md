@@ -15,7 +15,7 @@
 
 * Suporte ao carregamento da base de dados via upload local (CSV/Excel) ou link público do Google Drive.
 
-* Preenchimento e cruzamento automático de campos a partir do código PROMAX: recuperação de código EAN, descrição completa do produto e o *Fator Hecto*.
+* Preenchimento e cruzamento automático de campos a partir do código: recuperação de código EAN, descrição completa do produto e o *Fator Hecto*.
 
 * Cálculo do valor de carreto unitário e total por meio da regra: $\text{Carreto} = \text{Valor Unitário} \times \text{Fator Hecto}$.
 
