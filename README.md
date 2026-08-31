@@ -4,7 +4,7 @@
 ---
 
   **Visão Geral da Arquitetura e Recursos**
-
+  
   **Entrada Manual & Gestão de Custos:**
   
 * Painel para inclusão manual de dados de compra: código EAN do produto, quantidade de caixas, valor da nota fiscal de compra, alíquota de impostos e preço de venda sugerido.
